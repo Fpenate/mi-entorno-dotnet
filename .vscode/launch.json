@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-backend",
+      "program": "${workspaceFolder}/MiSolucion/Backend/bin/Debug/net10.0/Backend.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/MiSolucion/Backend",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    {
+      "name": "Frontend",
+      "type": "blazorwasm",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/MiSolucion/Frontend",
+      "url": "http://localhost:5001"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Backend + Frontend",
+      "configurations": ["Backend", "Frontend"]
+    }
+  ]
+}
